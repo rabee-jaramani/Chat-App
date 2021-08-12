@@ -6,11 +6,10 @@ export const ChatContext = createContext();
 
 export const ChatProvider = ({ children, authUser }) => {
   const [myChats, setMyChats] = useState();
-  const [chatConfig, setChatConfig] = useState();
+  const [chatConfig, setChatConfig] = useState('');
   const [selectedChat, setSelectedChat] = useState();
 
   const createChatClick = () => {
-      console.log(authUser.email)
     newChat(chatConfig, { title: chatConfig.userName+' Chat' });
   };
   const deleteChatClick = chat => {
@@ -38,6 +37,7 @@ export const ChatProvider = ({ children, authUser }) => {
   // authUser has initialized.
   useEffect(() => {
     if (authUser) {
+      console.log("My chats"+myChats)
       fb.firestore
         .collection('chatUsers')
         .doc(authUser.uid)

@@ -21,11 +21,9 @@ export const ChatList = () => {
             selectedChat?.id === c.id ? 'selected-chat-item' : ''
           }`}
           key={index}
+          onClick={() => selectChatClick(c)}
         >
-          <div
-            onClick={() => selectChatClick(c)}
-            className="chat-list-item-content"
-          >
+          <div className="chat-list-item-content">
             {c.people.length === 1 ? (
               <>
                 <Icon circular inverted color="violet" name="user cancel" />

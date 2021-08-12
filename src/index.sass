@@ -1,6 +1,9 @@
+$important: rgb(251,189,8)
+$green:#299b34
+$basic_font:'Roboto',sans-serif
 body 
   margin: 0
-  font-family: 'Roboto',sans-serif
+  font-family: $basic_font
   font-size: 1.2rem
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -78,13 +81,12 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   display: flex
 
 .left-rail 
+  position: relative
   height: 100%
   width: 300px
 
 .chat-list-container 
   overflow-y: auto
-  height: calc(100% - 150px)
-  // height: 94.7vh
 
 
 .no-chats-yet 
@@ -102,8 +104,10 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   align-items: center
   box-shadow: 0px 0px 2px black
   justify-content: space-between
+  font-family: $basic_font
 
 
+  
 .chat-list-item-content 
   flex: 1
   display: flex
@@ -115,6 +119,7 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
 .chat-list-item .selected,
 .chat-list-item:hover 
   background-color: #18181d
+  cursor: pointer
 
 .chat-list-avatar 
   width: 28px
@@ -122,7 +127,7 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   border-radius: 100%
 
 .selected-chat-item 
-  background-color: #18181d
+  background-color: $green
 
 .chat-item-delete 
   width: 35px
@@ -140,17 +145,19 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   margin-left: 10px
 
 .create-chat-button 
-  width: 100%
+  width: 90%
   height: 50px
-  border: none
-  outline: none
+  margin-left: 5%
+  margin-top: 10px
   color: white
   cursor: pointer
   border-radius: 0px
-  background-color: #030a24
+  background-color: $important
+  font-family: $basic_font
+  font-size: 1.5rem
   &:hover
     transition: .5s
-    background-color: rgb(88, 166, 255)
+    background-color: rgb(0, 0, 0)
 
 .preview-message 
   font-size: 12px
@@ -235,29 +242,35 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   width: 100%
   display: flex
   flex-direction: column
-
+.welcome-user
+  font-family: $basic_font
+  font-size: 2rem
+  min-height: 3rem
+  padding-top: 10px
+  position: absolute
 .chat-toolbar 
   display: flex
-  min-height: 50px
+  min-height: 7rem
   color: #f2f2f2
-  padding-left: 25px
-  padding-right: 25px
   align-items: center
   background-color: #121212
-  justify-content: space-between
-
+  justify-content: space-around
+  font-family: $basic_font
+  
 .chat-header-text 
-  color: gray
+  color: $green
   font-size: 16px
   font-weight: bold
 
 .add-user-icon 
-  height: 100%
   display: flex
+  flex-direction: column
   cursor: pointer
   align-items: center
   padding-bottom: 5px
-
+  color: $important
+  .icon
+    font-size: 1.5rem
 .no-messages-yet 
   font-size: 24px
   margin-top: 25px
@@ -274,6 +287,8 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   display: flex
   margin-top: 25px
   flex-direction: column
+  border-radius: 5px
+  background-color: gray
 
 .message-image 
   width: 250px
@@ -316,7 +331,7 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   align-items: center
   width: calc(100% - 50px)
   background-color: #23252c
-  box-shadow: 0px 0px 3px black
+  box-shadow: 0px 0px 10px $important
 
 .attachment-icon 
   width: 35px
@@ -413,4 +428,28 @@ input[type="text"],input[type="password"],input[type="email"],button[type='submi
   top: 5px
   right: 5px
   cursor: pointer
-
+.left-sidebar-button-mobile
+  background-color: $important
+  width: 50px
+  text-align: center
+  border-radius: 0 10px 10px 0
+  position: absolute
+  right: -50px
+  top: 50%
+  font-family: $basic_font
+  font-size: 1.3rem
+  display: none
+@media ( max-width:1000px  )
+  .show-left-sidebar
+    left: 0 !important
+    background-color: rgb(98,98,98)
+  .left-rail
+    padding-top: 50px
+    position: absolute
+    left: -250px
+    width: 250px
+  .left-sidebar-button-mobile
+    display: block
+    cursor: pointer
+  .no-chat-selected
+    display: none

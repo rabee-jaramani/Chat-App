@@ -10,6 +10,9 @@ export const LeftSidebar = () => {
 
   return (
     <div className="left-rail">
+      <div className='left-sidebar-button-mobile' onClick={()=>document.querySelector('.left-rail').classList.toggle('show-left-sidebar')}>
+        add chat
+      </div>
       {chatsResolved ? (
         <>
           {!!myChats.length ? (

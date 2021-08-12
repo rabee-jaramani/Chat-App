@@ -23,6 +23,7 @@ export const Chat = () => {
 
   return (
     <>
+
       {!!chatConfig && (
         <ChatEngine
           hideUI={true}
@@ -67,10 +68,15 @@ export const Chat = () => {
       )}
 
       <div className="chat-container">
+        
         <LeftSidebar />
         <div className="current-chat">
+        <div className='welcome-user'>
+                  Welcome {chatConfig.userName?chatConfig.userName:''}
+        </div>
           {selectedChat ? (
             <div className="chat">
+       
               <ChatToolbar />
               <MessageList />
               <ChatInput />

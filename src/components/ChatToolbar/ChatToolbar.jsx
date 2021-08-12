@@ -12,19 +12,22 @@ export const ChatToolbar = () => {
     <>
       <div className="chat-toolbar">
         <div className="chat-header-text">
+           
           {joinUsernames(selectedChat.people, chatConfig.userName).slice(
             0,
             100,
           )}
         </div>
-
-        <div className="add-user-icon">
+    
+        <div className="add-user-icon" onClick={() => setSearching(true)}>
+          <div className='add-to-chat'>Add</div>
           <Icon
-            color="grey"
+            color="yellow"
             name="user plus"
-            onClick={() => setSearching(true)}
+            
           />
         </div>
+ 
       </div>
 
       <SearchUsers closeFn={() => setSearching(false)} visible={searching} />
