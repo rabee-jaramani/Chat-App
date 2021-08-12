@@ -1,11 +1,14 @@
 body 
   margin: 0
-  font-family: sans-serif
+  font-family: 'Roboto',sans-serif
+  font-size: 1.2rem
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 code 
-  font-family: source-code-pro
+  font-family: 'Chathura', source-code-pro,sans-serif
+input[type="text"],input[type="password"],input[type="email"],button[type='submit']
+    font-size:1.1rem
 
 .app 
   width: 100vw
@@ -15,7 +18,7 @@ code
   overflow: hidden
   align-items: center
   justify-content: center
-  background-color: #121212
+  background-color: #626262
 
 .auth-form 
   width: 500px
@@ -43,10 +46,10 @@ code
   border: none
   color: white
   cursor: pointer
-  background-color: #030a24
+  background-color:  rgb(88, 166, 255)
 
 .auth-form button:hover 
-  box-shadow: 0px 0px 3px black
+  box-shadow: 0px 0px 10px rgb(158, 203, 255)
 
 .auth-form button:disabled 
   color: darkgray
@@ -58,15 +61,15 @@ code
   margin-bottom: 25px
 
 .auth-link 
-  color: gray
+  color: rgb(173, 211, 255)
   cursor: pointer
   font-weight: bold
 
 .auth-link:hover 
-  color: #5c5caa
+  color: #6fdfb4
 
 .error 
-  color: #cd0000
+  color: #e91d38
   font-weight: bold
 
 .chat-container 
@@ -81,6 +84,8 @@ code
 .chat-list-container 
   overflow-y: auto
   height: calc(100% - 150px)
+  // height: 94.7vh
+
 
 .no-chats-yet 
   padding: 15px
@@ -94,10 +99,10 @@ code
   height: 75px
   width: 100%
   padding: 10px
-
   align-items: center
   box-shadow: 0px 0px 2px black
   justify-content: space-between
+
 
 .chat-list-item-content 
   flex: 1
@@ -143,6 +148,9 @@ code
   cursor: pointer
   border-radius: 0px
   background-color: #030a24
+  &:hover
+    transition: .5s
+    background-color: rgb(88, 166, 255)
 
 .preview-message 
   font-size: 12px

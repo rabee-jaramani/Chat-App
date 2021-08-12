@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/storage'
 import 'firebase/firestore'
-
+// connect to firebase
 try{
     firebase.initializeApp({
     apiKey: 'AIzaSyCOlSMRrmpNK4OrZC6Q_WuhWf9XVjPfitU',
