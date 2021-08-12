@@ -50,7 +50,7 @@ export const ChatProvider = ({ children, authUser }) => {
           });
         });
     }
-  }, [authUser, setChatConfig]);
+  }, [authUser, setChatConfig,myChats]);
 
   return (
     <ChatContext.Provider
