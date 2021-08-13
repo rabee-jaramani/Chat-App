@@ -50,9 +50,9 @@ export const SearchUsers = ({ visible, closeFn }) => {
       getOtherPeople(chatConfig, selectedChat.id, (chatId, data) => {
         const userNames = Object.keys(data)
           .map(key => data[key].username)
-          .filter(u =>
-            u.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
-          );
+          // .filter(u =>
+          //   u.toLowerCase().includes(debouncedSearchTerm.toLowerCase()),
+          // );
         setSearchResults(userNames.map(u => ({ title: u })));
         setLoading(false);
       });
@@ -70,11 +70,11 @@ export const SearchUsers = ({ visible, closeFn }) => {
         fluid
         onBlur={closeFn}
         loading={loading}
-        value={searchTerm}
+        onFocus={e => setSearchTerm(e.target.value)}
+        value={"Contacts"}
         placeholder="Search For Users"
         open={!!searchResults && !loading}
         input={{ ref: r => (searchRef = r) }}
-        onSearchChange={e => setSearchTerm(e.target.value)}
         results={searchResults}
         onResultSelect={(e, data) => {
           if (data.result?.title) {
