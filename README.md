@@ -1,3 +1,5 @@
+--vercel: is the hosting site
+
 --api: createUser method
     api request using axios to create user on chat engine site AFTER signip proccess, this api on server side.
 

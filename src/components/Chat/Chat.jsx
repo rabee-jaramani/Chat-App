@@ -4,7 +4,6 @@ import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftSidebar, ChatToolbar, ChatInput, MessageList } from 'components';
 import img from './sel.png'
 import { fb } from "service"
-import { useAuth } from 'hooks';
 export const Chat = () => {
   const {
     myChats,
