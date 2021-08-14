@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useChat } from 'context';
 import { ChatAvatar } from 'components';
 import { Icon } from 'semantic-ui-react';
 import { joinUsernames, notMe } from 'helpers';
+
 
 export const ChatList = () => {
   const {
@@ -12,7 +13,12 @@ export const ChatList = () => {
     selectChatClick,
     deleteChatClick,
   } = useChat();
+  const[chatFocusedId,setChatFocusedId]=useState('');
 
+const chat_clicked=(chat)=>{
+  selectChatClick(chat);
+  setChatFocusedId(chat.id)
+}
   return (
     <div className="chat-list">
       {myChats.map((c, index) => (
@@ -21,7 +27,7 @@ export const ChatList = () => {
             selectedChat?.id === c.id ? 'selected-chat-item' : ''
           }`}
           key={index}
-          onClick={() => selectChatClick(c)}
+          onClick={() => chat_clicked(c,c.id)}
         >
           <div className="chat-list-item-content">
             {c.people.length === 1 ? (
@@ -62,11 +68,7 @@ export const ChatList = () => {
             )}
           </div>
 
-          {c.last_message.text?<div className='bubble'>{(c.last_message.text?'new':'')}</div>:''}
-         {console.log('Selected chat '+selectedChat)}
-
-
-
+          {(c.last_message.text && (chatFocusedId!==c.id) )?<div className='bubble'>{(c.last_message.text?'new':'')}</div>:''}
 
           <div onClick={() => deleteChatClick(c)} className="chat-item-delete">
             <Icon name="delete" />

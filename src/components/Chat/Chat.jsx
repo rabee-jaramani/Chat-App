@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useChat } from 'context';
 import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftSidebar, ChatToolbar, ChatInput, MessageList } from 'components';
-import img from './sel.png'
 import { fb } from "service"
 export const Chat = () => {
   const {
