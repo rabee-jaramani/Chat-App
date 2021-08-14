@@ -6,9 +6,16 @@ import { groupMessages } from 'helpers';
 
 export const MessageList = () => {
   const { selectedChat } = useChat();
+  
+  //for infinte scroling
+  window.setInterval(function() {
+    var elem = document.getElementById('data');
+    elem.scrollTop = elem.scrollHeight;
+  }, Infinity);
+
 
   return (
-    <div className="chat-messages">
+    <div className="chat-messages" id='data'>
       {!!selectedChat.messages.length ? (
         groupMessages(selectedChat.messages).map((m, index) => (
           <div key={index} className="chat-message">
