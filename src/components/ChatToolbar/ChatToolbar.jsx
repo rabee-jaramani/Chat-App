@@ -18,7 +18,7 @@ export const ChatToolbar = () => {
             100,
           )}
         </div>
-    
+
         <div className="add-user-icon" onClick={() => setSearching(true)}>
           <div className='add-to-chat'>Add</div>
           <Icon

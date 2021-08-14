@@ -1,13 +1,11 @@
 import { useChat } from 'context';
 import { ChatAvatar } from 'components';
 import { groupMessages } from 'helpers';
-// import { useScrollToBottom } from 'hooks';
 
 
 
 export const MessageList = () => {
   const { selectedChat } = useChat();
-  // useScrollToBottom(selectedChat, 'chat-messages');
 
   return (
     <div className="chat-messages">

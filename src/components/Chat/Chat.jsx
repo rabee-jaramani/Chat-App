@@ -3,6 +3,8 @@ import { useChat } from 'context';
 import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftSidebar, ChatToolbar, ChatInput, MessageList } from 'components';
 import img from './sel.png'
+import { fb } from "service"
+import { useAuth } from 'hooks';
 export const Chat = () => {
   const {
     myChats,
@@ -20,7 +22,12 @@ export const Chat = () => {
   useEffect(() => {
     console.log('Selected Chat: ', selectedChat);
   }, [selectedChat]);
-
+  // sign out 
+  const signout=()=>{
+    fb.auth.signOut();
+    alert('Bye')
+    
+  }
   return (
     <>
 
@@ -71,9 +78,15 @@ export const Chat = () => {
         
         <LeftSidebar />
         <div className="current-chat">
+
         <div className='welcome-user'>
                   Welcome {chatConfig.userName?chatConfig.userName:''}
+        <div className='signout'
+        onClick={signout}
+        >SignOut</div>
+
         </div>
+        
           {selectedChat ? (
             <div className="chat">
        

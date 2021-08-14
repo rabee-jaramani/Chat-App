@@ -11,10 +11,6 @@ export const Signup = ()=>{
         fb.auth.createUserWithEmailAndPassword(email,password)
         .then(res=>{
             if(res?.user?.uid){
-                console.log('BODY CONTENT>>> ',JSON.stringify({
-                    userName,
-                    userId: res.user.uid,
-                }))
                 fetch('/api/createUser',{
                     method:'POST',
                     headers:{

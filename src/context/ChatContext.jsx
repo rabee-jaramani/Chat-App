@@ -9,9 +9,12 @@ export const ChatProvider = ({ children, authUser }) => {
   const [chatConfig, setChatConfig] = useState('');
   const [selectedChat, setSelectedChat] = useState();
 
+  // Create Chat
   const createChatClick = () => {
     newChat(chatConfig, { title: chatConfig.userName+' Chat' });
   };
+
+  //Delete Chat
   const deleteChatClick = chat => {
     const isAdmin = chat.admin.username === chatConfig.userName;
 
@@ -24,6 +27,8 @@ export const ChatProvider = ({ children, authUser }) => {
       leaveChat(chatConfig, chat.id, chatConfig.userName);
     }
   };
+
+  // Select Chat
   const selectChatClick = chat => {
     getMessages(chatConfig, chat.id, messages => {
       setSelectedChat({
