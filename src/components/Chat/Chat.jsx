@@ -95,12 +95,8 @@ export const Chat = () => {
             </div>
           ) : (
             <div className="no-chat-selected">
-              <img
-                src={img}
-                className="point-left"
-                alt="point-left"
-              />
-              Select A Chat
+             
+             CHAT APP
             </div>
           )}
         </div>

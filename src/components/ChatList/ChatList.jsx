@@ -62,6 +62,12 @@ export const ChatList = () => {
             )}
           </div>
 
+          {c.last_message.text?<div className='bubble'>{(c.last_message.text?'new':'')}</div>:''}
+         {console.log('Selected chat '+selectedChat)}
+
+
+
+
           <div onClick={() => deleteChatClick(c)} className="chat-item-delete">
             <Icon name="delete" />
           </div>
