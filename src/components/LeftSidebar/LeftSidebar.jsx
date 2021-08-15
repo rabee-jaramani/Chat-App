@@ -7,13 +7,14 @@ import { Loader } from 'semantic-ui-react';
 export const LeftSidebar = () => {
   const { myChats, createChatClick } = useChat();
   const chatsResolved = useResolved(myChats);
-
   return (
     <div className="left-sidebar">
-      <div className='left-sidebar-button-mobile' onClick={()=>document.querySelector('.left-rail').classList.toggle('show-left-sidebar')}>
+      <div className='left-sidebar-button-mobile' onClick={()=>document.querySelector('.left-sidebar').classList.toggle('show-left-sidebar')}>
         add chat
       </div>
-      {chatsResolved ? (
+      {
+      
+      chatsResolved ? (
         <>
           {!!myChats.length ? (
             <div className="chat-list-container">

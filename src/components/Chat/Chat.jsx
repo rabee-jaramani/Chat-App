@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useChat } from 'context';
 import { getChats, ChatEngine } from 'react-chat-engine';
 import { LeftSidebar, ChatToolbar, ChatInput, MessageList } from 'components';
@@ -13,13 +12,6 @@ export const Chat = () => {
     setSelectedChat,
   } = useChat();
 
-  useEffect(() => {
-    console.log('My Chats: ', myChats);
-  }, [myChats]);
-
-  useEffect(() => {
-    console.log('Selected Chat: ', selectedChat);
-  }, [selectedChat]);
   // sign out 
   const signout=()=>{
     fb.auth.signOut();

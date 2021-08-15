@@ -42,18 +42,21 @@ export const ChatProvider = ({ children, authUser }) => {
   // authUser has initialized.
   useEffect(() => {
     if (authUser) {
-      console.log("My chats"+myChats)
-      fb.firestore
+      setTimeout(() => {
+        fb.firestore
         .collection('chatUsers')
         .doc(authUser.uid)
         .onSnapshot(snap => {
-          setChatConfig({
-            userSecret: authUser.uid,
-            avatar: snap.data().avatar,
-            userName: snap.data().userName,
-            projectID: 'c03fd6c7-e831-497d-af9a-07f8d38ba8a6',
-          });
+            setChatConfig({
+              userSecret: authUser.uid,
+              userName: snap.data().userName,
+              avatar: snap.data().avatar,
+              projectID: 'c03fd6c7-e831-497d-af9a-07f8d38ba8a6',
+            });
+        
         });
+      }, 3000);
+
     }
   }, [authUser, setChatConfig,myChats]);
 
