@@ -2,7 +2,7 @@ import { fb } from 'service';
 import { createContext, useContext, useEffect, useState } from 'react';
 import { newChat, leaveChat, deleteChat, getMessages } from 'react-chat-engine';
 
-export const ChatContext = createContext();
+export const ChatContext = createContext(' ');
 
 export const ChatProvider = ({ children, authUser }) => {
   const [myChats, setMyChats] = useState();

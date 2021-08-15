@@ -78,7 +78,7 @@ export const Chat = () => {
         <div className="current-chat">
 
         <div className='welcome-user'>
-                  Welcome {chatConfig.userName?chatConfig.userName:''}
+                  Welcome {chatConfig.userName?chatConfig.userName:' '}
         <div className='signout'
         onClick={signout}
         >SignOut</div>
