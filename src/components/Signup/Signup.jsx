@@ -12,6 +12,11 @@ export const Signup = () => {
       .createUserWithEmailAndPassword(email, password)
       .then((res) => {
         if (res?.user?.uid) {
+          console.log(
+            "USER NAME BEFORE create user on firebase and chatengine: ",
+            userName
+          );
+
           fetch("/api/createUser", {
             method: "POST",
             headers: {
