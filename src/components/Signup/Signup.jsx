@@ -22,6 +22,7 @@ export const Signup = () => {
               userId: res.user.uid,
             }),
           }).then(() => {
+            console.log("USER NAME BEFORE FIRESTORE: ", userName);
             fb.firestore
               .collection("chatUsers")
               .doc(res.user.uid)
