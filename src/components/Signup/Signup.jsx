@@ -17,7 +17,7 @@ export const Signup = ()=>{
                        'Content-Type':'application/json',
                     },
                     body: JSON.stringify({
-                        userName:res.user.userNamme,
+                        userName,
                         userId: res.user.uid,
                     }),
                 })
