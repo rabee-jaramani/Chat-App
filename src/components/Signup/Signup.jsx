@@ -39,11 +39,11 @@ export const Signup = () => {
       })
       .catch((error) => {
         if (error.code === "auth/wrong-password") {
-          setServerError("Invalid credentials");
+          setServerError("Invalid credentials ERROR 007 <<From Signup Form>>");
         } else if (error.code === "auth/user-not-found") {
           setServerError("No account for this email");
         } else {
-          setServerError("somthing went wrong");
+          setServerError("somthing went wrong ERROR 008");
         }
       })
       .finally(() => setSubmitting(false));
